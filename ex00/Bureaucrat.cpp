@@ -6,7 +6,7 @@
 /*   By: helfatih <helfatih@1337.student.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 14:34:59 by helfatih          #+#    #+#             */
-/*   Updated: 2025/12/23 13:11:17 by helfatih         ###   ########.fr       */
+/*   Updated: 2025/12/24 10:17:27 by helfatih         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ Bureaucrat::~Bureaucrat() {
   std::cout << "Destructor say Goodbye" << std::endl;
 }
 
-
 /* ****************************** */
 /*        Throw Exception         */
 /* ****************************** */
@@ -80,9 +79,25 @@ int Bureaucrat::getGrade() const {
 /*    Increment and Decrement     */
 /* ****************************** */
 void  Bureaucrat::increment() {
+  this->grade--;
   if (grade < 1) {
+    Bureaucrat::GradeTooHighException thing;
+    throw thing;
+  }
+  else if (grade > 150) {
+    Bureaucrat::GradeTooLowException thing;
+    throw thing;
   }
 }
 
 void  Bureaucrat::decrement() {
+  this->grade++;
+  if (grade < 1) {
+    Bureaucrat::GradeTooHighException thing;
+    throw thing;
+  }
+  else if (grade > 150) {
+    Bureaucrat::GradeTooLowException thing;
+    throw thing;
+  }
 }
