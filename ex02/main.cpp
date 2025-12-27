@@ -1,25 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: helfatih <helfatih@1337.student.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/27 20:25:18 by helfatih          #+#    #+#             */
+/*   Updated: 2025/12/27 20:25:18 by helfatih         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Bureaucrat.hpp"
 
 int main () {
-  // try {
-  //   AForm f("HOSSAM", 40, 38);
-  //   Bureaucrat thing1("HICHAM", 14);
-  //   thing1.signForm(f);
-  // }
-  // catch (const std::exception& e) {
-  //   std::cerr << "Error: " << e.what() << std::endl;
-  // }
-  //
-  // std::cout << "************************\n"
-  //           << "*      Second Test     *\n"
-  //           << "************************\n";
-  // try {
-  //   AForm f("MONSIF", 4, 38);
-  //   Bureaucrat thing2("Hicham", 10);
-  //   thing2.signForm(f);
-  // }
-  // catch (const std::exception& e) {
-  //   std::cerr << "Error: " << e.what() << std::endl;
-  // }
-  return 0;
 }

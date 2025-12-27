@@ -13,6 +13,25 @@
 #include "RobotomyRequestForm.hpp"
 #include "AForm.hpp"
 
+
+/* ****************************** */
+/*          Other_Methode         */
+/* ****************************** */
+void  RobotomyRequestForm::execute(const Bureaucrat& executor) const {
+  (void)executor;
+  if (this->getSign() == false) {
+    throw AForm::FormNotSignedException();
+  }
+
+  else if (executor.getGrade() > this->getGradeExec()) {
+    throw AForm::GradeTooLowException();
+  }
+}
+
+
+/* ****************************** */
+/*   Canonical Orthodox Form      */
+/* ****************************** */
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &other) : AForm(other) {
   this->_target = other._target;
 }

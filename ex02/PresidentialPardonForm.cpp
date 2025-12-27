@@ -13,6 +13,24 @@
 #include "PresidentialPardonForm.hpp"
 #include "AForm.hpp"
 
+/* ****************************** */
+/*          Other_Methode         */
+/* ****************************** */
+void  PresidentialPardonForm::execute(const Bureaucrat& executor) const {
+  (void)executor;
+  if (this->getSign() == false) {
+    throw AForm::FormNotSignedException();
+  }
+
+  else if (executor.getGrade() > this->getGradeExec()) {
+    throw AForm::GradeTooLowException();
+  }
+}
+
+
+/* ****************************** */
+/*   Canonical Orthodox Form      */
+/* ****************************** */
 PresidentialPardonForm::PresidentialPardonForm() : AForm("Presidential Pardon", 23, 5) {
   _target = "Iknkonnu";
 }

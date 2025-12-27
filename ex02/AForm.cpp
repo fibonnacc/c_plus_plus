@@ -55,7 +55,12 @@ bool  AForm::getSign() const {
 /* ****************************** */
 /*          Other_Methode         */
 /* ****************************** */
+const char* AForm::FormNotSignedException::what() const throw() {
+  return ("the form can not be executed because it has not be signed yet!");
+}
+
 void AForm::beSigned(const Bureaucrat& thing) {
+
   if (thing.getGrade() > this->getGradeSign()) {
     GradeTooLowException other;
     throw other;

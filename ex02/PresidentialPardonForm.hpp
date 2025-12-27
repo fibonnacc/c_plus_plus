@@ -16,14 +16,24 @@
 
 #include <iostream>
 #include "AForm.hpp"
+#include "Bureaucrat.hpp"
 
 class PresidentialPardonForm : public AForm {
 public:
+
+  /* ****************************** */
+  /*   Canonical Orthodox Form      */
+  /* ****************************** */
   PresidentialPardonForm();
   PresidentialPardonForm(std::string str);
   PresidentialPardonForm(const PresidentialPardonForm &other);
   PresidentialPardonForm &operator=(const PresidentialPardonForm &other);
   ~PresidentialPardonForm();
+
+  /* ****************************** */
+  /*          Other_Methode         */
+  /* ****************************** */
+  void  execute(const Bureaucrat& executor) const;
 
 private:
   std::string _target;

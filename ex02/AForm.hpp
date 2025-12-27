@@ -31,6 +31,10 @@ public:
   /* ****************************** */
   /*          Other_Methode         */
   /* ****************************** */
+  class FormNotSignedException : public std::exception {
+  public:
+    const char* what() const throw();
+  };
   void  beSigned(const Bureaucrat& thing);
   virtual void  execute(const Bureaucrat& executor) const = 0;
 

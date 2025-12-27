@@ -13,6 +13,23 @@
 #include "ShrubberyCreationForm.hpp"
 #include "AForm.hpp"
 
+/* ****************************** */
+/*          Other_Methode         */
+/* ****************************** */
+void  ShrubberyCreationForm::execute(const Bureaucrat& executor) const {
+  (void)executor;
+  if (this->getSign() == false) {
+    throw AForm::FormNotSignedException();
+  }
+
+  else if (executor.getGrade() > this->getGradeExec()) {
+    throw AForm::GradeTooLowException();
+  }
+}
+
+/* ****************************** */
+/*   Canonical Orthodox Form      */
+/* ****************************** */
 ShrubberyCreationForm::ShrubberyCreationForm(std::string str) : AForm("Shrubbery Creation", 145, 137) {
   this->_target = str;
 }

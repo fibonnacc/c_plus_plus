@@ -16,14 +16,24 @@
 
 #include <iostream>
 #include "AForm.hpp"
+#include "Bureaucrat.hpp"
 
 class RobotomyRequestForm : public AForm {
 public:
+
+  /* ****************************** */
+  /*   Canonical Orthodox Form      */
+  /* ****************************** */
   RobotomyRequestForm();
   RobotomyRequestForm(std::string str);
   RobotomyRequestForm(const RobotomyRequestForm &other);
   RobotomyRequestForm &operator=(const RobotomyRequestForm &other);
   ~RobotomyRequestForm();
+
+  /* ****************************** */
+  /*          Other_Methode         */
+  /* ****************************** */
+  void  execute(const Bureaucrat& executor) const;
 
 private:
   std::string _target;
