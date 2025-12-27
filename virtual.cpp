@@ -7,7 +7,11 @@ struct A
   string a;
   A() {
     a = "Hicham";
-    cout << "A constructor is called the name is : " << &a << endl;
+    cout << "A constructor 1 is called the name is : " << &a << endl;
+  }
+  A(string target) {
+    a = target;
+    cout << "A constructor 2 is called the name is : " << endl;
   }
 };
 
@@ -16,6 +20,9 @@ struct B : virtual public A
   B() {
     cout << "B constructor is called the name is : " << &a << endl;
     a = "name_B";
+  }
+  B(string target) : A(target) {
+    cout << "B constructor 2 is called the name is : "  << endl;
   }
 };
 
@@ -43,6 +50,8 @@ struct D : public B, public C
 
 int  main (int argc, char *argv[])
 {
-  D obj1;
+  B thing("hhhh");
+
+  cout << thing.a << endl;
   return 0;
 }
