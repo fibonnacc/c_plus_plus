@@ -12,12 +12,12 @@
 
 #include "ShrubberyCreationForm.hpp"
 #include "AForm.hpp"
+#include <fstream>
 
 /* ****************************** */
 /*          Other_Methode         */
 /* ****************************** */
 void  ShrubberyCreationForm::execute(const Bureaucrat& executor) const {
-  (void)executor;
   if (this->getSign() == false) {
     throw AForm::FormNotSignedException();
   }
@@ -25,6 +25,16 @@ void  ShrubberyCreationForm::execute(const Bureaucrat& executor) const {
   else if (executor.getGrade() > this->getGradeExec()) {
     throw AForm::GradeTooLowException();
   }
+    
+  std::string FileName = this->_target + "_shrubbery";
+  std::ofstream OutFile(FileName.c_str());
+  OutFile << "           /\\        " << std::endl;
+  OutFile << "          /^^\\       " << std::endl;
+  OutFile << "        //    \\\\        " << std::endl;
+  OutFile << "      ///      \\\\\\ " << std::endl;
+  OutFile << "     ///////\\\\\\\\\\\\\\ " << std::endl;
+  OutFile << "          /^^\\    " << std::endl;
+  OutFile << "          /^^\\    " << std::endl;
 }
 
 /* ****************************** */

@@ -56,6 +56,8 @@ bool  Form::getSign() const {
 /*          Other_Methode         */
 /* ****************************** */
 void Form::beSigned(const Bureaucrat& thing) {
+  std::cout << "Bureaucrat Grade : " << thing.getGrade() << std::endl;
+  std::cout << "AForm Grade : " << this->getGradeSign() << std::endl;
   if (thing.getGrade() > this->getGradeSign()) {
     GradeTooLowException other;
     throw other;

@@ -27,6 +27,7 @@ COLOR_PURPLE	Makefile	/^COLOR_PURPLE = \\033[35m$/;"	m
 COLOR_RESET	Makefile	/^COLOR_RESET = \\033[0m$/;"	m
 COLOR_YELLOW	Makefile	/^COLOR_YELLOW = \\033[33m$/;"	m
 FORM_H	AForm.hpp	/^#define  FORM_H$/;"	d
+FormNotSignedException	AForm.hpp	/^  class FormNotSignedException : public std::exception {$/;"	c	class:AForm
 GradeTooHighException	AForm.hpp	/^  class GradeTooHighException : public std::exception {$/;"	c	class:AForm
 GradeTooHighException	Bureaucrat.hpp	/^  class GradeTooHighException : public std::exception {$/;"	c	class:Bureaucrat
 GradeTooLowException	AForm.hpp	/^  class GradeTooLowException : public std::exception {$/;"	c	class:AForm
@@ -83,6 +84,7 @@ operator =	RobotomyRequestForm.cpp	/^RobotomyRequestForm &RobotomyRequestForm::o
 operator =	ShrubberyCreationForm.cpp	/^ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &other) {$/;"	f	class:ShrubberyCreationForm	typeref:typename:ShrubberyCreationForm &
 re	Makefile	/^re: fclean all$/;"	t
 signForm	Bureaucrat.cpp	/^void  Bureaucrat::signForm(AForm& thing) {$/;"	f	class:Bureaucrat	typeref:typename:void
+what	AForm.cpp	/^const char* AForm::FormNotSignedException::what() const throw() {$/;"	f	class:AForm::FormNotSignedException	typeref:typename:const char *
 what	AForm.cpp	/^const char* AForm::GradeTooHighException::what() const throw() {$/;"	f	class:AForm::GradeTooHighException	typeref:typename:const char *
 what	AForm.cpp	/^const char* AForm::GradeTooLowException::what() const throw() {$/;"	f	class:AForm::GradeTooLowException	typeref:typename:const char *
 what	Bureaucrat.cpp	/^const char* Bureaucrat::GradeTooHighException::what() const throw() {$/;"	f	class:Bureaucrat::GradeTooHighException	typeref:typename:const char *
