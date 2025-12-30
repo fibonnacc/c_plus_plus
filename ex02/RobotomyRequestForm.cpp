@@ -17,15 +17,21 @@
 /* ****************************** */
 /*          Other_Methode         */
 /* ****************************** */
-void  RobotomyRequestForm::execute(const Bureaucrat& executor) const {
-  (void)executor;
-  if (this->getSign() == false) {
-    throw AForm::FormNotSignedException();
-  }
+void  RobotomyRequestForm::execute(Bureaucrat const & executor) const {
+  executor.executeForm(*this);
 
-  else if (executor.getGrade() > this->getGradeExec()) {
-    throw AForm::GradeTooLowException();
+  std::cout << "*BZZZZZZZZT!*" << std::endl;
+  sleep(1);
+  std::cout << "*BZZZZZZZZT!*" << std::endl;
+  sleep(1);
+  std::cout << "*BZZZZZZZZT!*" << std::endl;
+
+  int random = rand() % 100 + 1;
+  if (random <= 50) {
+    std::cout << this->_target << " has been robotomized!" << std::endl;
   }
+  else
+    std::cout << this->_target << " was not robotomized!" << std::endl;
 }
 
 

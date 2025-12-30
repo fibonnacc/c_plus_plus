@@ -33,6 +33,7 @@ public:
   /*          Other_Methode         */
   /* ****************************** */
   void  signForm(AForm& thing);
+  void  executeForm(AForm const & form) const;
 
   /* ****************************** */
   /*    Increment and Decrement     */

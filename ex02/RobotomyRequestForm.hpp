@@ -17,6 +17,9 @@
 #include <iostream>
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
+#include <cstdlib>
+#include <ctime>
+#include <unistd.h>
 
 class RobotomyRequestForm : public AForm {
 public:
@@ -33,7 +36,7 @@ public:
   /* ****************************** */
   /*          Other_Methode         */
   /* ****************************** */
-  void  execute(const Bureaucrat& executor) const;
+  void  execute(Bureaucrat const & executor) const;
 
 private:
   std::string _target;

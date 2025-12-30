@@ -17,14 +17,14 @@
 /* ****************************** */
 /*          Other_Methode         */
 /* ****************************** */
-void  ShrubberyCreationForm::execute(const Bureaucrat& executor) const {
-  if (this->getSign() == false) {
-    throw AForm::FormNotSignedException();
+void  print(std::ofstream& OutFile, char c, int times) {
+  for (int  i = 0; i < times; i++) {
+    OutFile << c;
   }
+}
 
-  else if (executor.getGrade() > this->getGradeExec()) {
-    throw AForm::GradeTooLowException();
-  }
+void  ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
+  executor.executeForm(*this);
     
   std::string FileName = this->_target + "_shrubbery";
   std::ofstream OutFile(FileName.c_str());
