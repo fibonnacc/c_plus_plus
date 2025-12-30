@@ -8,7 +8,6 @@
 /*          Other_Methode         */
 /* ****************************** */
 AForm *Intern::makeForm(const std::string &FormName, const std::string &FormTraget) {
-  AForm *form = NULL;
   std::string Str[3] = {"Presidential Pardon", "Robotomy Request", "Shrubbery Creation"};
 
   int i;
@@ -28,6 +27,10 @@ AForm *Intern::makeForm(const std::string &FormName, const std::string &FormTrag
     default:
       throw NotFound();
   }
+}
+
+const char* Intern::NotFound::what() const throw() {
+  return ("*Not Found!*");
 }
 
 AForm *Intern::makePresidential(const std::string &target) {
@@ -53,9 +56,12 @@ Intern::Intern() {
 }
 
 Intern::Intern(const Intern &other) {
+  (void)other;
 }
 
 Intern &Intern::operator=(const Intern &other) {
+  (void)other;
+  return *this;
 }
 
 Intern::~Intern() {

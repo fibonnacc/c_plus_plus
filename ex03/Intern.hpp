@@ -23,6 +23,10 @@ public:
   AForm *makeRobotomy(const std::string &target);
   AForm *makeShrubbery(const std::string &target);
 
+  class NotFound : public std::exception {
+  public:
+    const char* what() const throw();
+  };
   /* ****************************** */
   /*   Canonical Orthodox Form      */
   /* ****************************** */
